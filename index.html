@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Grocery Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h2>🛒 Smart Grocery</h2>
+<nav>
+<a onclick="slidePage(0)">Home</a>
+<a onclick="slidePage(1)">About</a>
+<a onclick="slidePage(2)">Products</a>
+<a onclick="slidePage(3)">Cart</a>
+<a onclick="slidePage(4)">Contact</a>
+</nav>
+</header>
+
+<div class="container">
+
+<!-- HOME -->
+<section class="page home">
+<h1>Welcome to Smart Grocery</h1>
+<p>Fruits | Vegetables | Groceries | Home Essentials</p>
+<button onclick="slidePage(2)">Shop Now</button>
+</section>
+
+<!-- ABOUT -->
+<section class="page about">
+<h2>About Us</h2>
+<p>We deliver fresh and quality products.</p>
+<p>✔ Fast Delivery</p>
+<p>✔ Affordable Prices</p>
+<p>✔ Trusted by Customers</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="page productsPage">
+
+<h2>Our Products</h2>
+
+<input type="text" id="search" placeholder="Search product">
+<button onclick="searchProduct()">Search</button>
+
+<p id="notFound"></p>
+
+<div class="products">
+
+<!-- Fruits -->
+<div class="card product"><h4>Apple</h4><p>₹120</p><button onclick="addToCart('Apple',120)">Add</button></div>
+<div class="card product"><h4>Banana</h4><p>₹60</p><button onclick="addToCart('Banana',60)">Add</button></div>
+
+<!-- Vegetables -->
+<div class="card product"><h4>Tomato</h4><p>₹40</p><button onclick="addToCart('Tomato',40)">Add</button></div>
+<div class="card product"><h4>Potato</h4><p>₹30</p><button onclick="addToCart('Potato',30)">Add</button></div>
+
+<!-- Groceries -->
+<div class="card product"><h4>Rice</h4><p>₹70</p><button onclick="addToCart('Rice',70)">Add</button></div>
+<div class="card product"><h4>Sugar</h4><p>₹45</p><button onclick="addToCart('Sugar',45)">Add</button></div>
+
+<!-- Home -->
+<div class="card product"><h4>Soap</h4><p>₹25</p><button onclick="addToCart('Soap',25)">Add</button></div>
+<div class="card product"><h4>Detergent</h4><p>₹90</p><button onclick="addToCart('Detergent',90)">Add</button></div>
+
+</div>
+
+</section>
+
+<!-- CART -->
+<section class="page cartPage">
+<h2>Your Cart</h2>
+<ul id="cartList"></ul>
+<h3>Total: ₹<span id="total">0</span></h3>
+</section>
+
+<!-- CONTACT -->
+<section class="page contact">
+
+<h2>Contact Us</h2>
+
+<div class="contact-info">
+<p>📞 9876543210</p>
+<p>📧 support@grocery.com</p>
+</div>
+
+<div class="contact-form">
+
+<div class="form-group">
+<input type="text" id="name" placeholder="Enter Name">
+<span class="error" id="nameError"></span>
+</div>
+
+<div class="form-group">
+<input type="email" id="email" placeholder="Enter Email">
+<span class="error" id="emailError"></span>
+</div>
+
+<div class="form-group">
+<textarea id="message" placeholder="Enter Message"></textarea>
+<span class="error" id="msgError"></span>
+</div>
+
+<button class="send-btn" onclick="sendMessage()">Send Message</button>
+
+<p id="formMsg"></p>
+
+</div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
